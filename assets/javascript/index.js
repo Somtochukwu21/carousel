@@ -25,17 +25,25 @@ const moveToSlide = (track,currentSlide,  targetSlide) => {
 const updateDots=(currentDot,targetDot)=>
 [currentDot, targetDot].forEach(dot => dot.classList.toggle('current-slide'));
 
+const hideShowArrows = (slides,prevBtn,nextBtn ,targetIndex) => {
+        prevBtn.classList.toggle('is-hidden', targetIndex === 0);
+    nextBtn.classList.toggle('is-hidden', targetIndex === slides.length - 1);
+
+}
 
 // move left
 prevBtn.onclick = () => {
     const currentSlide = track.querySelector('.current-slide');
     const prevSlide = currentSlide.previousElementSibling;
     const currentDot = dotsNav.querySelector('.current-slide');
-    const previousDot = currentDot.previousElementSibling;
+    const prevDot = currentDot.previousElementSibling;
+    const prevIndex=slides.findIndex(slide=>slide===prevSlide)
 
 
     moveToSlide(track, currentSlide, prevSlide)
-updateDots(currentDot,previousDot)
+    updateDots(currentDot, prevDot);
+    hideShowArrows(slides, prevBtn, nextBtn, prevIndex);
+
     
 }
 
@@ -43,11 +51,14 @@ updateDots(currentDot,previousDot)
 nextBtn.onclick = () => {
     const currentSlide = track.querySelector('.current-slide');
     const nextSlide = currentSlide.nextElementSibling;
-const currentDot = dotsNav.querySelector('.current-slide');
+    const currentDot = dotsNav.querySelector('.current-slide');
     const nextDot = currentDot.nextElementSibling;
+    const nextIndex=slides.findIndex(slide=>slide===nextSlide)
     // Move to the next slide
     moveToSlide(track,currentSlide,nextSlide)
-updateDots(currentDot,nextDot)
+    updateDots(currentDot, nextDot);
+    hideShowArrows(slides, prevBtn, nextBtn, nextIndex);
+
 
 }
 // move to indicated slide
@@ -62,4 +73,6 @@ const targetSlide = slides[targetIndex];
 
 moveToSlide(track, currentSlide, targetSlide);
 updateDots(currentDot,targetDot)
+ hideShowArrows(slides,prevBtn,nextBtn ,targetIndex) 
+
 })
