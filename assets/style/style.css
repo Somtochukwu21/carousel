@@ -61,7 +61,10 @@
 	height: 15px;
 	background: rgba(0, 0, 0, 0.3);
 	margin: 10px;
+	cursor: pointer;
 }
 .carousel__indicator.current-slide {
 	background: lightgreen;
 }
+
+.is-hidden{display: none;}
