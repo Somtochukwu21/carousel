@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vanilla JS</title>
+   <link rel="stylesheet" href="./assets/style/style.css">
+</head>
+
+<body>
+   <div class="carousel">
+      <button class="carousel__button carousel__button--right">&gt;</button>
+
+      <div class="carousel__track-container">
+         <ul class="carousel__track">
+            <li class="carousel__slide current-slide">
+               <img class="carousel__image" src="./assets/image/img1.avif" width="500px" alt="art">
+            </li>
+            <li class="carousel__slide">
+               <img class="carousel__image" src="./assets/image/img2.jpg" width="500px" alt="art">
+            </li>
+            <li class="carousel__slide">
+               <img class="carousel__image" src="./assets/image/img3.jpg" width="500px" alt="art">
+            </li>
+         </ul>
+      </div>
+
+      <button class="carousel__button carousel__button--left">&lt;</button>
+
+      <div class="carousel__nav">
+         <button class="carousel__indicator current-slide"></button>
+         <button class="carousel__indicator"></button>
+         <button class="carousel__indicator"></button>
+      </div>
+   </div>
+   <script src="./assets/javascript/index.js"></script>
+</body>
+
+</html>
