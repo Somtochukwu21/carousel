@@ -5,7 +5,6 @@ const prevBtn = document.querySelector(".carousel__button--left");
 const dotsNav = document.querySelector(".carousel__nav");
 const dots = Array.from(dotsNav.children);
 
-
 const slideSize = slides[0].getBoundingClientRect();
 const slideWidth = slideSize.width;
 
@@ -31,6 +30,7 @@ const hideShowArrows = (slides,prevBtn,nextBtn ,targetIndex) => {
 
 }
 
+
 // move left
 prevBtn.onclick = () => {
     const currentSlide = track.querySelector('.current-slide');
@@ -46,6 +46,7 @@ prevBtn.onclick = () => {
 
     
 }
+ 
 
 // move right
 nextBtn.onclick = () => {
